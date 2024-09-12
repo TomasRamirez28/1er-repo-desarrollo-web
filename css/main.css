@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ESTILOS GENERALES */
+
+body {
+    background-color: #0E0D0D;
+}
+
+/* ESTILOS DE HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul {
+    color: aliceblue;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding-right: 1rem;
+}
+
+/* ESTILOS DE MAIN */
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 20%);
+    margin: 1.8rem 1.8rem;
+    row-gap: 1.5rem;
+    height: 70vh;
+    align-content: center;
+
+
+}
+
+main div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .img-dos,
+main .img-cinco {
+    display: none;
+    /* esconde las imagenes,, no las muestra */
+}
+
+
+
+/* ESTILOS DE FOOTER */
+
+footer {
+    text-align: center;
+    color: aliceblue;
+}
+
+
+
+/* ESTILOS DE TABLET */
+
+@media screen and (min-width:600px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 50%);
+        column-gap: 1.5rem;
+
+    }
+
+    main .img-cuatro {
+        grid-column: span 2;
+    }
+}
+
+/* ESTILOS DE NETOBOOK */
+@media screen and (min-width:1024px) {
+
+    main .img-dos,
+    main .img-cinco {
+        display: block;
+
+    }
+
+    main {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 30% 30% 20%
+    }
+
+    main .img-uno,
+    main .img-tres {
+        grid-row: span 2;
+    }
+
+    main .img-cuatro {
+        grid-column: 2;
+    }
+
+    main .img-cinco {
+        grid-column: span 3;
+    }
+}
